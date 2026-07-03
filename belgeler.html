@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resmi Belgelerimiz | Burhan Nakliyat</title>
+    <meta name="description" content="Burhan Nakliyat K3 yetki belgesi, vergi levhası, taşıma sigortası ve marka tescil belgeleri. İstanbul'un resmi ve lisanslı nakliyat firması.">
+    
+    <!-- Google Fontları -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- TEMEL AYARLAR (Ana Siteyle Aynı) --- */
+        :root {
+            --primary-color: #2b3ea3; /* Logo mavi (güncellendi) */
+            --secondary-color: #d71920; /* Logo kırmızı (güncellendi) */
+            --whatsapp-green: #45d325; /* WhatsApp Yeşili */
+            --dark-bg: #111827;
+            --text-color: #333;
+            --light-gray: #f9fafb;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--light-gray); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- HEADER --- */
+       header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--primary-color); }
+        .logo span { color: var(--secondary-color); }
+        .logo img { height: 52px; width: auto; display: block; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { font-weight: 500; font-size: 1rem; color: #444; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .header-btn { background: var(--primary-color); color: var(--white); padding: 10px 25px; border-radius: 5px; font-weight: bold; }
+        .header-btn:hover { background: #143b6d; }
+
+        /* --- PAGE HEADER --- */
+        .page-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 120px 0 60px; /* Header payı dahil */
+            text-align: center;
+        }
+        .page-header h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .page-header p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        /* --- BELGE GRID --- */
+        .documents-section { padding: 60px 0; }
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .doc-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+        .doc-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        .doc-preview {
+            height: 250px;
+            background: #eef2f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Gerçek resim yoksa ikon gösterimi için */
+        .doc-preview i { font-size: 5rem; color: #cbd5e1; }
+        .doc-preview img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .doc-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .doc-info { padding: 25px; }
+        .doc-info h3 { color: var(--primary-color); font-size: 1.3rem; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+        .doc-info p { font-size: 0.95rem; color: #666; margin-bottom: 15px; }
+        .doc-meta { 
+            border-top: 1px solid #eee; 
+            padding-top: 15px; 
+            font-size: 0.85rem; 
+            color: #888; 
+            display: flex; 
+            justify-content: space-between; 
+        }
+
+        /* --- BİLGİLENDİRME KUTUSU --- */
+        .info-box {
+            background: #fff3cd;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 5px;
+            color: #856404;
+        }
+        .info-box h4 { margin-bottom: 10px; font-size: 1.1rem; }
+
+        /* --- MOBİL STICKY --- */
+        .mobile-sticky {
+            position: fixed; bottom: 0; left: 0; width: 100%; z-index: 2000;
+            display: none; box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+        .sticky-btn { flex: 1; padding: 15px; text-align: center; color: white; font-weight: bold; font-size: 1.1rem; }
+
+        @media (max-width: 768px) {
+            .mobile-sticky { display: flex; }
+            .documents-section { padding-bottom: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container navbar">
+            <div class="logo"><img src="istanbul-burhan-nakliyat.jpg" alt="Burhan Nakliyat logo"></div>
+            <!-- Ana Sayfaya Dönüş Linki -->
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Ana Sayfaya Dön</a>
+        </div>
+    </header>
+
+    <!-- SAYFA BAŞLIĞI -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Resmi Belgelerimiz</h1>
+            <p>Güvenin belgesi olur mu? Burhan Nakliyat'ta olur. Şeffaf, yasal ve sigortalı taşımacılığın kanıtları.</p>
+        </div>
+    </section>
+
+    <!-- BELGELER -->
+    <section class="documents-section">
+        <div class="container">
+            
+            <!-- Bilgilendirme Kutusu -->
+            <div class="info-box">
+                <h4><i class="fas fa-exclamation-triangle"></i> Neden Belge Sormalısınız?</h4>
+                <p>K3 Yetki Belgesi olmayan firmalar "korsan" statüsündedir ve eşyalarınızın yolda çevrilmesi durumunda el konulma riski vardır. Eşyalarınızı riske atmayın, belgeli nakliyeci seçin.</p>
+            </div>
+
+            <div class="doc-grid">
+                
+                <!-- Belge 1: K3 -->
+                <div class="doc-card">
+                    <div class="doc-preview">
+                        <div class="doc-badge">Zorunlu</div>
+                        <!-- Buraya K3 belgesinin fotosunu koyacaksın -->
+                        <i class="fas fa-file-contract"></i> 
+                    </div>
+                    <div class="doc-info">
+                        <h3>K3 Yetki Belgesi</h3>
+                        <p>Ulaştırma Bakanlığı tarafından evden eve nakliyat firmalarına verilen resmi yeterlilik belgesidir. Firmamız bakanlık onaylıdır.</p>
+                        <div class="doc-meta">
+                            <span>Durum: <strong style="color:green">Aktif</strong></span>
+                            <span>Belge No: TR-34-K3-XXXX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Belge 2: Vergi Levhası -->
+                <div class="doc-card">
+                    <div class="doc-preview">
+                        <div class="doc-badge">Kurumsal</div>
+                        <img src ="vergi-levhasi-nakliye.jpg" alt="Vergi Levhası" />
+                    
+                        <i class="fas fa-stamp"></i>
+                    </div>
+                    <div class="doc-info">
+                        <h3>Vergi Levhası</h3>
+                        <p>Burhan Nakliyat, devlete vergisini ödeyen, resmi kaydı bulunan, yeri yurdu belli olan ticari bir işletmedir.</p>
+                        <div class="doc-meta">
+                            <span>Vergi Dairesi: Kadıköy</span>
+                            <span>Kuruluş: 1998</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Belge 5: SRC ve Psikoteknik -->
+                 <div class="doc-card">
+                    <div class="doc-preview">
+                        <div class="doc-badge">Personel</div>
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="doc-info">
+                        <h3>SRC ve Psikoteknik Belgeleri</h3>
+                        <p>Şoförlerimiz profesyonel yetkinlik belgesi (SRC) ve psikoteknik raporuna sahiptir. Direksiyonda usta eller var.</p>
+                        <div class="doc-meta">
+                            <span>Tüm Şoförler</span>
+                            <span>Sertifikalı</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Alt CTA -->
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="margin-bottom: 20px; font-size: 1.2rem;">Belgelerimiz tam, peki ya sizin taşınma planınız?</p>
+                <a href="tel:05320000000" style="background: var(--secondary-color); color: white; padding: 15px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; display: inline-block;">
+                    <i class="fas fa-phone"></i> Bizi Arayın
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER (Basitleştirilmiş) -->
+    <footer style="background: #0b0f19; color: #9ca3af; padding: 30px 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2023 Burhan Nakliyat. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- MOBİL STICKY BAR -->
+    <div class="mobile-sticky">
+        <a href="tel:05320000000" class="sticky-btn" style="background: var(--primary-color);">
+            <i class="fas fa-phone-alt"></i> ARA
+        </a>
+        <a href="https://wa.me/905320000000" class="sticky-btn" style="background: #25D366;">
+            <i class="fab fa-whatsapp"></i> WHATSAPP
+        </a>
+    </div>
+
+</body>
+</html>
