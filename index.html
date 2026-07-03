@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burhan Nakliyat | İstanbul Kurumsal Evden Eve Nakliyat</title>
+    <meta name="description" content="İstanbul evden eve nakliyat, parça eşya taşıma, ofis taşıma. 25 yıllık tecrübe, sigortalı ve kurumsal taşımacılık. Burhan Nakliyat ile güvenle taşının.">
+    
+    <!-- Google Fontları -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- TEMEL AYARLAR --- */
+        :root {
+            --primary-color: #1a4d8c; /* Kurumsal Lacivert */
+            --secondary-color: #f39c12; /* Enerjik Turuncu */
+            --whatsapp-green: #45d325; /* WhatsApp Yeşili */
+            --dark-bg: #111827;
+            --text-color: #333;
+            --light-gray: #f9fafb;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--white); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* --- HEADER --- */
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--primary-color); }
+        .logo span { color: var(--secondary-color); }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { font-weight: 500; font-size: 1rem; color: #444; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .header-btn { background: var(--primary-color); color: var(--white); padding: 10px 25px; border-radius: 5px; font-weight: bold; }
+        .header-btn:hover { background: #143b6d; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto; opacity: 0.9; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; }
+        .btn-main { background: var(--secondary-color); color: var(--white); padding: 15px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; }
+        .btn-main:hover { background: #d35400; transform: translateY(-2px); }
+        .btn-whatsapp { background: var(--whatsapp-green); color: var(--white); padding: 15px 40px; border-radius: 5px; font-weight: bold; font-size: 1.1rem; }
+
+        /* HERO İÇERİK DÜZENLEMESİ */
+        .hero-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* ROZETLERİN KAPLAYICISI */
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* TEKİL ROZET TASARIMI */
+        .badge-item {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(4px);
+        }
+
+        .badge-item i {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        /* MOBİL DÜZENLEME */
+        @media (max-width: 768px) {
+            .hero-badges {
+                gap: 10px;
+            }
+            .badge-item {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        /* --- STATS BAR --- */
+        .stats-wrapper { position: relative; margin-top: -60px; z-index: 10; margin-bottom: 60px; }
+        .stats-bar {
+            background: var(--white); border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); padding: 40px;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center;
+        }
+        .stat-item i { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 15px; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary-color); font-weight: 800; line-height: 1; margin-bottom: 5px; }
+        .stat-item p { color: #666; font-weight: 500; }
+
+        /* --- HİZMETLER --- */
+        .services { padding: 50px 0; background: var(--light-gray); }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary-color); font-family: 'Montserrat', sans-serif; margin-bottom: 10px; }
+        .section-header p { color: #666; max-width: 600px; margin: 0 auto; }
+        
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-card { background: var(--white); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; border-bottom: 4px solid transparent; }
+        .service-card:hover { transform: translateY(-10px); border-bottom-color: var(--secondary-color); }
+        .service-card i { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #222; }
+
+        /* --- NEDEN BİZ MODÜLÜ --- */
+        .why-us-module { padding: 80px 0; background: var(--white); }
+        .split-layout { display: flex; align-items: center; gap: 50px; }
+        
+        .text-side { flex: 1; }
+        .text-side h2 { font-size: 2.5rem; color: var(--primary-color); font-family: 'Montserrat', sans-serif; margin-bottom: 20px; line-height: 1.2; }
+        .text-side > p { color: #666; margin-bottom: 30px; font-size: 1.1rem; }
+        
+        .check-list { margin-bottom: 30px; }
+        .check-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; font-size: 1.05rem; color: #444; }
+        .check-list li i { color: var(--secondary-color); font-size: 1.3rem; margin-top: 3px; }
+        .check-list li strong { color: #222; font-weight: 700; }
+        
+                /* BU KISMI GÜNCELLE */
+        .btn-whatsapp-large {
+            background: var(--secondary-color); /* Yeşil yerine Turuncu yapıldı */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            /* Gölge rengini de turuncuya uyumlu hale getirdik */
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4); 
+            transition: 0.3s;
+        }
+        
+        /* Üzerine gelince koyulaşması için (Hover efekti) */
+        .btn-whatsapp-large:hover { 
+            background: #d35400; 
+            transform: translateY(-2px); 
+        }
+
+
+        .img-side { flex: 1; }
+        .img-side img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; }
+
+        /* --- KAYAN LOGOLAR --- */
+        .references { padding: 40px 0; background: var(--white); border-top: 1px solid #eee; border-bottom: 1px solid #eee; overflow: hidden; }
+        .ref-title { text-align: center; font-size: 0.9rem; color: #888; letter-spacing: 1px; margin-bottom: 30px; text-transform: uppercase; }
+        
+        .marquee-container { width: 100%; overflow: hidden; position: relative; }
+        .marquee-track { display: flex; width: calc(200px * 14); animation: scroll 20s linear infinite; }
+        .marquee-item { width: 200px; flex-shrink: 0; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #999; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-200px * 7)); }
+        }
+
+        /* --- KURUMSAL & BELGELER --- */
+        .authority-section { padding: 80px 0; background: var(--light-gray); }
+        .authority-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .auth-content { flex: 1; }
+        .auth-content h2 { font-size: 2.5rem; color: var(--primary-color); font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
+        .badges-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 30px; }
+        .badge-item-auth { display: flex; align-items: center; gap: 15px; }
+        .badge-icon { width: 50px; height: 50px; background: #eef2f7; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.2rem; }
+        
+        /* DÜZELTME: BEYAZ YAZI SORUNU İÇİN EKLENEN KODLAR */
+        .badge-text h4 { font-size: 1rem; font-weight: 700; color: #222; margin-bottom: 2px; }
+        .badge-text span { font-size: 0.9rem; color: #555; }
+
+        .auth-image { flex: 1; position: relative; }
+        .truck-card { background: var(--white); border-radius: 20px; padding: 20px; text-align: center; border: 2px solid #eee; }
+        .truck-card img { width: 100%; max-width: 500px; border-radius: 10px; }
+        .trust-badge { background: var(--secondary-color); color: white; padding: 10px 20px; border-radius: 50px; display: inline-block; margin-top: -20px; position: relative; font-weight: bold; }
+
+        /* --- MÜŞTERİ YORUMLARI --- */
+        .testimonials { background-color: var(--dark-bg); padding: 80px 0; color: var(--white); }
+        .testimonials .section-header h2 { color: var(--white); }
+        .testimonials .section-header p { color: #aaa; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .review-card { background: #1f2937; padding: 30px; border-radius: 12px; border: 1px solid #374151; }
+        .stars { color: var(--secondary-color); margin-bottom: 15px; font-size: 0.9rem; }
+        .review-text { font-style: italic; color: #d1d5db; margin-bottom: 20px; }
+        .reviewer-info h4 { font-size: 1rem; color: var(--white); }
+        .reviewer-info span { font-size: 0.85rem; color: #9ca3af; }
+
+        /* --- FOOTER --- */
+        footer { background: #0b0f19; color: #9ca3af; padding: 60px 0 20px; border-top: 1px solid #1f2937; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-col h4 { color: var(--white); margin-bottom: 20px; font-size: 1.2rem; }
+        .contact-list li { margin-bottom: 15px; display: flex; gap: 15px; align-items: center; }
+        .contact-list i { color: var(--secondary-color); }
+
+        /* --- MOBİL STICKY BAR --- */
+        .mobile-sticky { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 2000; display: none; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); }
+        .sticky-btn { flex: 1; padding: 15px; text-align: center; color: white; font-weight: bold; font-size: 1.1rem; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-links, .header-btn { display: none; }
+            .stats-bar { grid-template-columns: 1fr 1fr; gap: 30px; padding: 20px; }
+            .mobile-sticky { display: flex; }
+            footer { padding-bottom: 80px; }
+            .authority-container, .split-layout { flex-direction: column; }
+            .img-side { order: -1; margin-bottom: 20px; }
+        }
+
+            /* NASIL ÇALIŞIYORUZ BÖLÜMÜ */
+    .how-it-works {
+        padding: 80px 0;
+        background: var(--white);
+    }
+
+    .process-wrapper {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 50px;
+    }
+
+    /* Arkadaki Bağlantı Çizgisi */
+    .process-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 40px; /* Çizginin yüksekliği */
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #eef2f7; /* Hafif gri çizgi */
+        z-index: 0;
+    }
+
+    .process-step {
+        position: relative;
+        z-index: 1;
+        background: var(--white); /* Çizginin üstüne binmesi için */
+        width: 23%; /* 4 tane olduğu için */
+        text-align: center;
+        padding: 0 10px;
+        transition: 0.3s;
+    }
+
+    .process-step:hover {
+        transform: translateY(-5px);
+    }
+
+    /* İkon ve Numara Yuvarlağı */
+    .step-icon {
+        width: 80px;
+        height: 80px;
+        background: var(--white);
+        border: 3px solid var(--secondary-color); /* Turuncu Çerçeve */
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        box-shadow: 0 0 0 5px var(--white); /* Çizgiyi kesmek için beyaz hale */
+    }
+
+    /* Küçük Numara Baloncuğu */
+    .step-number {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: var(--secondary-color);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--white);
+    }
+
+    .process-step h3 {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .process-step p {
+        font-size: 0.95rem;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    /* MOBİL UYUMLULUK */
+    @media (max-width: 768px) {
+        .process-wrapper {
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        /* Mobilde yatay çizgiyi gizle */
+        .process-wrapper::before {
+            display: none; 
+        }
+
+        .process-step {
+            width: 100%;
+            padding: 20px;
+            border-bottom: 1px solid #eee; /* Mobilde alt alta ayırmak için çizgi */
+        }
+        
+        .process-step:last-child {
+            border-bottom: none;
+        }
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">BURHAN <span>NAKLİYAT</span></div>
+            <ul class="nav-links">
+                <li><a href="#">Anasayfa</a></li>
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#neden-biz">Neden Biz?</a></li>
+                <li><a href="#yorumlar">Yorumlar</a></li>
+            </ul>
+            <a href="tel:05320000000" class="header-btn"><i class="fas fa-phone"></i> 0532 000 00 00</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content-wrapper">
+            
+            <!-- ROZETLER (BAŞLIĞIN ÜSTÜNDE) -->
+            <div class="hero-badges">
+                <div class="badge-item"><i class="fas fa-check"></i> Sabit Fiyat</div>
+                <div class="badge-item"><i class="fas fa-check"></i> Uzman Ekip</div>
+                <div class="badge-item"><i class="fas fa-check"></i> Aynı Gün Nakliye</div>
+                <div class="badge-item"><i class="fas fa-check"></i> Ambalajlı</div>
+                <div class="badge-item"><i class="fas fa-check"></i> 7/24 Arayabilirsiniz</div>
+            </div>
+
+            <!-- BAŞLIK -->
+            <h1>İstanbul'un En Güvenilir<br>Nakliyat Firması</h1>
+            
+            <!-- AÇIKLAMA -->
+            <p>Eşyalarınız bizimle güvende. Sigortalı, ambalajlı ve profesyonel ekibimizle stressiz bir taşınma deneyimi yaşayın.</p>
+            
+            <!-- BUTONLAR -->
+            <div class="hero-btns">
+                <a href="tel:05320000000" class="btn-main"><i class="fas fa-truck"></i> Fiyat Al</a>
+                <a href="https://wa.me/905320000000" class="btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="container stats-wrapper">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <i class="fas fa-calendar-check"></i>
+                <h3>25+</h3>
+                <p>Yıllık Tecrübe</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-box-open"></i>
+                <h3>1500+</h3>
+                <p>Mutlu Müşteri</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-truck-moving"></i>
+                <h3>12+</h3>
+                <p>Geniş Araç Filosu</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <h3>40+</h3>
+                <p>Uzman Personel</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HİZMETLER -->
+    <section id="hizmetler" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hizmetlerimiz</h2>
+                <p>İstanbul içi ve şehirler arası taşımacılıkta ihtiyacınız olan tüm çözümler tek çatı altında.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-truck-loading"></i>
+                    <h3>Evden Eve Nakliyat</h3>
+                    <p>Eşyalarınızın sökümü, paketlenmesi ve yeni evinizde kurulumu dahil anahtar teslim hizmet.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Ofis Taşımacılığı</h3>
+                    <p>İş yerinizdeki dosyalar ve mobilyalar karışmadan, iş kaybı yaşamadan hızlı transfer.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Şehirler Arası Nakliyat</h3>
+                    <p>Tüm Türkiye'ye sigortalı ve zamanında teslimat garantisi ile uzun yol taşımacılığı.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-couch"></i>
+                    <h3>Parça Eşya Taşıma</h3>
+                    <p>Az miktardaki eşyalarınız, öğrenci evi veya çeyiz taşımalarınız için ekonomik araç seçeneklerimiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- NASIL ÇALIŞIYORUZ (PROCESS) -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nasıl Çalışıyoruz?</h2>
+                <p>Sürpriz yok, planlı çalışma var. 4 basit adımda yeni hayatınıza güvenli geçiş.</p>
+            </div>
+            
+            <div class="process-wrapper">
+                <!-- Adım 1 -->
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-headset"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <h3>İletişim & Planlama</h3>
+                    <p>Bizi arayın, eşya durumunuzu konuşalım. Size en uygun aracı ve net fiyatı belirleyelim.</p>
+                </div>
+
+                <!-- Adım 2 -->
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-box"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <h3>Profesyonel Paketleme</h3>
+                    <p>Belirlenen günde gelir, mobilyalarınızı ve eşyalarınızı hijyenik malzemelerle sararız.</p>
+                </div>
+
+                <!-- Adım 3 -->
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-truck-moving"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <h3>Güvenli Taşıma</h3>
+                    <p>Deneyimli ekibimiz eşyaları araca istifler ve yeni adrese sarsıntısız şekilde götürür.</p>
+                </div>
+
+                <!-- Adım 4 -->
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-couch"></i>
+                        <span class="step-number">4</span>
+                    </div>
+                    <h3>Kurulum & Teslimat</h3>
+                    <p>Mobilyalarınızın montajını yapar, beyaz eşyalarınızı kurar ve eşyaları odalara yerleştiririz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- NEDEN BİZ MODÜLÜ -->
+    <section id="neden-biz" class="why-us-module">
+        <div class="container split-layout">
+            <div class="text-side">
+                <h2>Neden Burhan Nakliyat?</h2>
+                <p>Bizi diğerlerinden ayıran, işimize duyduğumuz saygı ve size verdiğimiz güvendir.</p>
+                
+                <ul class="check-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Sigortalı Taşımacılık:</strong> Olası kazalara karşı eşyalarınız güvence altında.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Sabit Fiyat Garantisi:</strong> İş bitimi sürpriz ek ücretler yok.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Marangozlu Ekip:</strong> Mobilyalarınız uzman ellerde sökülür ve kurulur.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Hijyenik Ambalaj:</strong> Eşyalarınız temiz, tek kullanımlık patpat naylonlarla sarılır.</span>
+                    </li>
+                </ul>
+
+                <!-- DÜZELTME: BUTON ARAMA BUTONUNA DÖNÜŞTÜRÜLDÜ -->
+                <a href="tel:05320000000" class="btn-whatsapp-large">
+                    <i class="fas fa-phone"></i> Arayın, Yükünüzü Hafifletelim
+                </a>
+            </div>
+            <div class="img-side">
+                <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="İstanbul Nakliye Ekibi">
+            </div>
+        </div>
+    </section>
+
+    <!-- KAYAN LOGOLAR -->
+    <section class="references">
+        <div class="container">
+            <div class="ref-title">Bize Güvenen Kurumsal Çözüm Ortaklarımız</div>
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <div class="marquee-item">KAYA İNŞAAT</div>
+                    <div class="marquee-item">KOÇTAŞ LOJİSTİK</div>
+                    <div class="marquee-item">MEDİCAL PARK</div>
+                    <div class="marquee-item">GARANTİ BBVA</div>
+                    <div class="marquee-item">TEKZEN YAPI</div>
+                    <div class="marquee-item">AKBANK ŞUBE</div>
+                    <div class="marquee-item">ŞİŞECAM</div>
+                    <!-- TEKRAR -->
+                    <div class="marquee-item">KAYA İNŞAAT</div>
+                    <div class="marquee-item">KOÇTAŞ LOJİSTİK</div>
+                    <div class="marquee-item">MEDİCAL PARK</div>
+                    <div class="marquee-item">GARANTİ BBVA</div>
+                    <div class="marquee-item">TEKZEN YAPI</div>
+                    <div class="marquee-item">AKBANK ŞUBE</div>
+                    <div class="marquee-item">ŞİŞECAM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KURUMSAL GÜVEN & BELGELER -->
+    <section id="kurumsal" class="authority-section">
+        <div class="container authority-container">
+            <div class="auth-content">
+                <h2>Sektörün En Güvenilir<br>Nakliyat Şirketi</h2>
+                <p>Burhan Nakliyat olarak sadece eşya taşımıyoruz, güven taşıyoruz. Resmi yetki belgelerimiz, vergi levhamız ve marka tescilimiz ile korsan değil, kurumsal hizmet sunuyoruz.</p>
+                
+                <div class="badges-grid">
+                    <div class="badge-item-auth">
+                        <div class="badge-icon"><i class="fas fa-file-contract"></i></div>
+                        <div class="badge-text">
+                            <h4>K3 Yetki Belgesi</h4>
+                            <span>Ulaştırma Bakanlığı Onaylı</span>
+                        </div>
+                    </div>
+                    <div class="badge-item-auth">
+                        <div class="badge-icon"><i class="fas fa-stamp"></i></div>
+                        <div class="badge-text">
+                            <h4>Resmi Vergi Levhası</h4>
+                            <span>Kurumsal Kayıt</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="belgelerimiz.html" class="btn-main" style="padding: 12px 30px; font-size:1rem;">Belgelerimizi Görün</a>
+            </div>
+            
+            <div class="auth-image">
+                <div class="truck-card">
+                    <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Burhan Nakliyat Kamyonu">
+                    <br>
+                    <div class="trust-badge">Müşteri Puanı: 5.0 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- MÜŞTERİ YORUMLARI -->
+    <section id="yorumlar" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Müşteri Deneyimi</h2>
+                <p>Google Ads dönüşümlerinde "güven" etkisi çok yüksektir. İşte gerçek müşterilerimizin yorumları.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">“Zamanında geldiler, paketleme çok özenliydi. Taşıma günü beklediğimden çok daha rahat geçti. Burhan Bey ve ekibine teşekkürler.”</p>
+                    <div class="reviewer-info">
+                        <h4>Ahmet Yılmaz</h4>
+                        <span>Kadıköy, İstanbul</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">“Ofis taşımada etiketleme sistemi sayesinde yeni yerde çok hızlı toparlandık. Hiçbir dosyamız kaybolmadı.”</p>
+                    <div class="reviewer-info">
+                        <h4>Selin Demir</h4>
+                        <span>Şişli, İstanbul</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="review-text">“İletişim çok iyiydi. Ne yapılacağı belliydi, sürpriz yaşamadık. Fiyat konusunda da baştan ne dedilerse o oldu.”</p>
+                    <div class="reviewer-info">
+                        <h4>Murat Öztürk</h4>
+                        <span>Beylikdüzü, İstanbul</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">BURHAN <span>NAKLİYAT</span></div>
+                    <p>Yükünüzü bize bırakın, siz yeni evinizin keyfini çıkarın. İstanbul'un en köklü ve güvenilir nakliye markası.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Hızlı Menü</h4>
+                    <ul class="contact-list">
+                        <li><a href="#">Anasayfa</a></li>
+                        <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                        <li><a href="#kurumsal">Kurumsal</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>İletişim Bilgileri</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</li>
+                        <li><i class="fas fa-phone"></i> 0532 000 00 00</li>
+                        <li><i class="fas fa-envelope"></i> info@burhannakliyat.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid #1f2937; padding-top: 20px; font-size: 0.9rem;">
+                <p>&copy; 2023 Burhan Nakliyat. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBİL STICKY BAR -->
+    <div class="mobile-sticky">
+        <a href="tel:05320000000" class="sticky-btn" style="background: var(--primary-color);">
+            <i class="fas fa-phone-alt"></i> ARA
+        </a>
+        <a href="https://wa.me/905320000000" class="sticky-btn" style="background: var(--whatsapp-green);">
+            <i class="fab fa-whatsapp"></i> WHATSAPP
+        </a>
+    </div>
+
+</body>
+</html>
