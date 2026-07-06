@@ -42,6 +42,15 @@
         .nav-links a:hover { color: var(--primary-color); }
         .header-btn { background: var(--primary-color); color: var(--white); padding: 10px 25px; border-radius: 5px; font-weight: bold; }
         .header-btn:hover { background: #143b6d; }
+        .menu-toggle { display: none; background: transparent; border: none; cursor: pointer; width: 42px; height: 42px; align-items: center; justify-content: center; }
+        .menu-toggle span { display: block; width: 24px; height: 2px; background: #333; border-radius: 2px; position: relative; transition: transform 0.25s ease, opacity 0.25s ease; }
+        .menu-toggle span::before, .menu-toggle span::after { content: ''; position: absolute; width: 24px; height: 2px; background: #333; border-radius: 2px; transition: transform 0.25s ease; }
+        .menu-toggle span::before { transform: translateY(-8px); }
+        .menu-toggle span::after { transform: translateY(8px); }
+        .menu-toggle.open span { background: transparent; }
+        .menu-toggle.open span::before { transform: rotate(45deg); }
+        .menu-toggle.open span::after { transform: rotate(-45deg); }
+        .nav-links.open { display: flex; }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -230,7 +239,12 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
-            .nav-links, .header-btn { display: none; }
+            .nav-links { display: none; position: absolute; top: 80px; right: 20px; background: var(--white); box-shadow: 0 15px 30px rgba(0,0,0,0.12); border-radius: 14px; padding: 20px; flex-direction: column; gap: 18px; width: calc(100% - 40px); max-width: 300px; }
+            .nav-links.open { display: flex; }
+            .nav-links a { color: #333; }
+            .navbar { position: relative; }
+            .menu-toggle { display: inline-flex; }
+            .header-btn { display: none; }
             .stats-bar { grid-template-columns: 1fr 1fr; gap: 30px; padding: 20px; }
             .mobile-sticky { display: flex; }
             footer { padding-bottom: 80px; }
@@ -363,6 +377,7 @@
                 <li><a href="#yorumlar">Yorumlar</a></li>
             </ul>
             <a href="tel:+905352942682" class="header-btn"><i class="fas fa-phone"></i> 0535 294 26 82</a>
+            <button class="menu-toggle" aria-label="Mobil menüyü aç/kapat"><span></span></button>
         </div>
     </header>
 
@@ -682,6 +697,17 @@
             <i class="fab fa-whatsapp"></i> WHATSAPP
         </a>
     </div>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggle = document.querySelector('.menu-toggle');
+            var navLinks = document.querySelector('.nav-links');
+            if (toggle && navLinks) {
+                toggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('open');
+                    toggle.classList.toggle('open');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
